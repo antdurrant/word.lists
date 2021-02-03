@@ -6,6 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD The goal of word.lists is to … =======
 The goal of word.lists is to provide easy access to a handful of
 word-frequency lists.
 
@@ -31,8 +32,6 @@ And the development version from [GitHub](https://github.com/) with:
 # just this one for at least a while
 devtools::install_github("antdurrant/word.lists")
 ```
-
-## Example
 
 We’ll see the distribution of words from the NGSL and NAWL in some
 arbitrary academic-ish text.
