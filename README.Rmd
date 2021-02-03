@@ -18,13 +18,19 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
+<<<<<<< HEAD
 The goal of word.lists is to ...
+=======
+The goal of word.lists is to provide easy access to a handful of word-frequency lists.
+
+These lists come primarily from the researchers Charlie Browne, Brent Culligan and Joseph Phillips, and made publicly available at https://www.newgeneralservicelist.org/ and Tom Cobb, whose site https://www.lextutor.ca/ is immensely useful for vocabulary profiling.
 
 ## Installation
 
 You can install the released version of word.lists from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
+# no you can't
 install.packages("word.lists")
 ```
 
@@ -32,29 +38,54 @@ And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
+# just this one for at least a while
 devtools::install_github("antdurrant/word.lists")
 ```
-## Example
+We'll see the distribution of words from the NGSL and NAWL in some arbitrary academic-ish text.
 
-This is a basic example which shows you how to solve a common problem:
+
+`NAWL List Description
+
+A dataset containing the New Academic Word List (NAWL) & New General Service List (NGSL). Difficulty groupings have been arbitrarily set by me, as follows: Group 1: first 500 words of NGSL by frequency & "supplementary" words - months/numbers etc Group 2: next 500 words of NGSL by frequency Group 3: next 1000 words of NGSL by frequency Group 4: remaining NGSL words by frequency (about 800 words) Group 5: academic word list (about 950 words)`
+
 
 ```{r example}
 library(word.lists)
-## basic example code
+library(udpipe)
+library(dplyr)
+
+
+
+# what does a list look like?
+head(list_academic)
+
+# pick some text
+text <- "There are numerous indicators of success in any field of research. 
+Though one may be valid in some context, it may be rendered without utility in another."
+
+# annotate it with udpipe, keep only some useful bits
+piped_text <- udpipe(text, object = "english") %>% 
+  select(sentence_id, token_id, token, lemma, upos)
+
+# show the words and where they are in the list
+piped_text %>%
+  left_join(list_academic) %>%
+  head()
+
+# order by most advanced words first
+joined_text <- piped_text %>%
+  left_join(list_academic) %>%
+  filter(upos != "PUNCT") %>%
+  arrange(desc(group)) 
+head(joined_text)
+  
+# how many in each group?
+joined_text %>%
+  count(on_list, group) %>%
+  arrange(desc(group))
+
+# we can see that this has a fairly high proportion of "academic" words
+# with the majority falling under the most frequent thousand-word grouping (this is totally normal)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

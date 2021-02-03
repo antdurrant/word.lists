@@ -181,3 +181,22 @@
 #' }
 #' @source \url{https://www.lextutor.ca/vp/comp/bnc_info.html}
 "list_flemma"
+
+
+#' wiki List
+#'
+#' A dataset containing the 5000 most frequent words
+#' according to wikipedia in 2019
+#' Groups are separated by the thousand.
+#'
+#'
+#'
+#' @format A data frame with 4999 observations and 3 variables
+#' \describe{
+#'   \item{lemma}{base form of the word, English}
+#'   \item{group}{"difficulty grouping"}
+#'   \item{on_list}{"flemma"}
+#' }
+#' @source \url{https://www.lextutor.ca/vp/comp/bnc_info.html}
+"list_wiki"
+>>>>>>> a6a7c9f (add first datasets)
