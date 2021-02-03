@@ -1,0 +1,15 @@
+Package: word.lists
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Anthony",
+           family = "Durrant",
+           role = c("aut", "cre"),
+           email = "antdurrant@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: A collection of word-frequency lists.
+License: `use_mit_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
