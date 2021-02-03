@@ -44,9 +44,9 @@ devtools::install_github("antdurrant/word.lists")
 We'll see the distribution of words from the NGSL and NAWL in some arbitrary academic-ish text.
 
 
-`NAWL List Description
+#### NAWL List Description
 
-A dataset containing the New Academic Word List (NAWL) & New General Service List (NGSL). Difficulty groupings have been arbitrarily set by me, as follows: Group 1: first 500 words of NGSL by frequency & "supplementary" words - months/numbers etc Group 2: next 500 words of NGSL by frequency Group 3: next 1000 words of NGSL by frequency Group 4: remaining NGSL words by frequency (about 800 words) Group 5: academic word list (about 950 words)`
+**A dataset containing the New Academic Word List (NAWL) & New General Service List (NGSL). Difficulty groupings have been arbitrarily set by me, as follows: Group 1: first 500 words of NGSL by frequency & "supplementary" words - months/numbers etc Group 2: next 500 words of NGSL by frequency Group 3: next 1000 words of NGSL by frequency Group 4: remaining NGSL words by frequency (about 800 words) Group 5: academic word list (about 950 words)**
 
 
 ```{r example}
