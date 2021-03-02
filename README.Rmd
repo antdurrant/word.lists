@@ -10,17 +10,18 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
-)
+  )
+
+options(knitr.kable.NA = '')
 ```
 
 # word.lists
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-<<<<<<< HEAD
-The goal of word.lists is to ...
-=======
+
 The goal of word.lists is to provide easy access to a handful of word-frequency lists.
 
 These lists come primarily from the researchers Charlie Browne, Brent Culligan and Joseph Phillips, and made publicly available at https://www.newgeneralservicelist.org/ and Tom Cobb, whose site https://www.lextutor.ca/ is immensely useful for vocabulary profiling.
@@ -30,8 +31,8 @@ These lists come primarily from the researchers Charlie Browne, Brent Culligan a
 You can install the released version of word.lists from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-# no you can't
-install.packages("word.lists")
+# no, you can't
+# install.packages("word.lists")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
@@ -46,46 +47,124 @@ We'll see the distribution of words from the NGSL and NAWL in some arbitrary aca
 
 #### NAWL List Description
 
-**A dataset containing the New Academic Word List (NAWL) & New General Service List (NGSL). Difficulty groupings have been arbitrarily set by me, as follows: Group 1: first 500 words of NGSL by frequency & "supplementary" words - months/numbers etc Group 2: next 500 words of NGSL by frequency Group 3: next 1000 words of NGSL by frequency Group 4: remaining NGSL words by frequency (about 800 words) Group 5: academic word list (about 950 words)**
+__A dataset containing the New Academic Word List (NAWL) & New General Service List (NGSL). Difficulty groupings have been arbitrarily set by me, as follows: Group 1: first 500 words of NGSL by frequency & "supplementary" words - months/numbers etc Group 2: next 500 words of NGSL by frequency Group 3: next 1000 words of NGSL by frequency Group 4: remaining NGSL words by frequency (about 800 words) Group 5: academic word list (about 950 words)__
 
 
-```{r example}
+```{r example, message=FALSE, warning=FALSE}
 library(word.lists)
 library(udpipe)
 library(dplyr)
+```
 
 
+What does a list look like?
 
-# what does a list look like?
-head(list_academic)
+```{r}
+list_academic %>%
+  head() %>% 
+  knitr::kable()
+```
 
-# pick some text
+Any old text will do:
+
+```{r}
 text <- "There are numerous indicators of success in any field of research. 
 Though one may be valid in some context, it may be rendered without utility in another."
+```
 
-# annotate it with udpipe, keep only some useful bits
+Annotate it with udpipe, keep only some useful bits
+
+```{r}
 piped_text <- udpipe(text, object = "english") %>% 
-  select(sentence_id, token_id, token, lemma, upos)
+  select(doc_id, sentence_id, token_id, token, lemma, upos) 
 
-# show the words and where they are in the list
+piped_text %>%
+  head() %>%
+  knitr::kable()
+```
+
+Show the words and where they are in the list
+
+```{r}
 piped_text %>%
   left_join(list_academic) %>%
-  head()
+  head() %>% 
+  knitr::kable()
+```
 
-# order by most advanced words first
+
+Order by most advanced words first
+
+```{r}
 joined_text <- piped_text %>%
   left_join(list_academic) %>%
   filter(upos != "PUNCT") %>%
   arrange(desc(group)) 
-head(joined_text)
-  
-# how many in each group?
-joined_text %>%
-  count(on_list, group) %>%
-  arrange(desc(group))
 
-# we can see that this has a fairly high proportion of "academic" words
-# with the majority falling under the most frequent thousand-word grouping (this is totally normal)
+joined_text %>%
+  head() %>%
+  knitr::kable()
 ```
 
+How many in each group?
 
+```{r}
+joined_text %>%
+  count(on_list, group) %>%
+  arrange(desc(group))%>%
+  knitr::kable()
+```
+
+We can see that this has a fairly high proportion of "academic" words with the majority falling under the most frequent thousand-word grouping, which is totally normal.
+
+
+### Auto-generate translated wordlists
+
+
+If I am teaching Japanese-speaking kids:
+
+I want to get a wordlist
+
+```{r}
+piped_text %>%
+  word.lists::get_wordlist(language = "jpn")%>%
+  knitr::kable()
+```
+
+Okay, but I know my students know the first thousand or so words
+
+```{r}
+piped_text %>%
+  word.lists::get_wordlist(language = "jpn") %>%
+  left_join(list_academic) %>%
+  filter(upos != "PUNCT",
+         group > 2) %>%
+  select(on_list, group, token, lemma, upos, translation) %>%
+  knitr::kable()
+```
+
+Or maybe I am teaching Finnish-speaking kids who just need academic words:
+
+```{r}
+piped_text %>%
+  word.lists::get_wordlist(language = "eus") %>%
+  left_join(list_academic) %>%
+  filter(upos != "PUNCT",
+         group == 5) %>%
+  select(on_list, group, token, lemma, upos, translation) %>%
+  knitr::kable()
+
+```
+
+The translations only go English > OTHER. They all come from the Open Multilingual Wordnet, which itself is an international project using the fundamental work done by the Princeton wordnet. Where there is no entry in the Open Multilingual Wordnet, the translation will come out blank. It is not perfect, but it is a heck of a lot easier than going through texts one word at a time.
+
+The translation work runs through Python's nltk module.
+
+```{r}
+word.lists::nltk_languages %>%
+  knitr::kable()
+```
+
+TODO: Add IPA
+
+TODO: Bring this functionality to an app

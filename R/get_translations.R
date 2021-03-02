@@ -96,7 +96,7 @@ get_translation <-  function(token, part_of_speech, language = "jpn"){
 #' @return a dataframe
 #' @export
 #'
-make_wordlist <- function(data, language){
+get_wordlist <- function(data, language){
 
   pos_trans <- tibble::tribble(
     ~upos, ~pos,
@@ -118,7 +118,7 @@ make_wordlist <- function(data, language){
     dplyr::filter(!is.na(pos))
 
   yep %>%
-    dplyr::mutate(translation = purrr::map2_chr(lemma, pos, ~get_syns(.x, .y, lang = language))) %>%
+    dplyr::mutate(translation = purrr::map2_chr(lemma, pos, ~get_translation(.x, .y, lang = language))) %>%
     dplyr::bind_rows(nope) %>%
     dplyr::mutate(token_id = as.numeric(token_id)) %>%
     dplyr::arrange(doc_id, sentence_id, token_id) %>%

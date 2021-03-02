@@ -2,6 +2,6 @@
 
 export("%>%")
 export(get_translation)
+export(get_wordlist)
 export(install_nltk)
-export(make_wordlist)
 importFrom(magrittr,"%>%")
