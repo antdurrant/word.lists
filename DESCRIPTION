@@ -8,7 +8,7 @@ Authors@R:
            email = "antdurrant@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: A collection of word-frequency lists.
-License: `use_mit_license()`
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -17,3 +17,14 @@ URL: https://github.com/antdurrant/word.lists
 BugReports: https://github.com/antdurrant/word.lists/issues
 Depends: 
     R (>= 2.10)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    tibble,
+    purrr,
+    dplyr,
+    stringr,
+    reticulate,
+    magrittr,
+    glue

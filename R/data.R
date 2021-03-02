@@ -197,6 +197,28 @@
 #'   \item{group}{"difficulty grouping"}
 #'   \item{on_list}{"flemma"}
 #' }
-#' @source \url{https://www.lextutor.ca/vp/comp/bnc_info.html}
 "list_wiki"
->>>>>>> a6a7c9f (add first datasets)
+
+
+
+#' NLTK Wordnet Languages and Coverage
+#'
+#' A dataset containing information on the wordnets
+#' provided to NLTK by OMW
+#' Pulled from the source 2021-03-02
+#' Follow link to source for citation information and direct download of data
+#'
+#'
+#' @format A data frame with 4999 observations and 3 variables
+#' \describe{
+#'   \item{wordnet}{name of the wordnet}
+#'   \item{lang}{three-character abreviation to be passed to `get_syns` and `make_wordlist`}
+#'   \item{synsets}{number of synsets present in wordnet}
+#'   \item{words}{number of words present in wordnet}
+#'   \item{senses}{number of senses present in wordnet}
+#'   \item{core}{percentage coverage of Princeton Wordnet}
+#'   \item{licence}{licence of wordnet}
+#'
+#' }
+#' @source \url{http://compling.hss.ntu.edu.sg/omw/}
+"nltk_languages"
