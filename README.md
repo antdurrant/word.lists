@@ -19,7 +19,7 @@ Culligan and Joseph Phillips, and made publicly available at
 
 ## Installation
 
-You can install the released version of word.lists from
+You can install the released version of word.lists from...
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
