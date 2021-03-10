@@ -23,10 +23,10 @@ install_nltk <- function(method = "auto", conda = "auto") {
 synsets <- NULL
 
 
-.onLoad <- function(libname, pkgname) {
-  # use superassignment to update global reference to scipy
-  synsets <<- reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
-}
+# .onLoad <- function(libname, pkgname) {
+#   # use superassignment to update global reference to scipy
+#   synsets <<- reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
+# }
 
 
 
