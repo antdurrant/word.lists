@@ -2,6 +2,7 @@
 
 export("%>%")
 export(get_definition)
+export(get_nltk_data)
 export(get_translation)
 export(get_wordlist)
 export(install_nltk)

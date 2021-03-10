@@ -19,6 +19,18 @@ install_nltk <- function(method = "auto", conda = "auto") {
 }
 
 
+
+#' Download nltk data
+#'
+#' @param method
+#' @param conda
+#'
+#' @export
+#'
+get_nltk_data <- function(method = "auto", conda = "auto"){
+  reticulate::import("nltk")$download()
+}
+
 #' Synsets function from wordnet
 synsets <- function(){
   reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
