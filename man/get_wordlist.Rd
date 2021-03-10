@@ -4,12 +4,14 @@
 \alias{get_wordlist}
 \title{Make wordlists from udpiped dataframes}
 \usage{
-get_wordlist(data, language)
+get_wordlist(data, language, def = TRUE)
 }
 \arguments{
 \item{data}{a dataframe containing doc_id, sentence_id, token_id, token, lemma, upos. Should be piped from udpipe.}
 
 \item{language}{three-character abbreviation of language to find translations for. Refer to \code{wordlists::nltk_languages}.}
+
+\item{def}{TRUE will add a definition column, anything else will leave it out. Defaults to TRUE}
 }
 \value{
 a dataframe
