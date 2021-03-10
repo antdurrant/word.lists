@@ -19,9 +19,10 @@ install_nltk <- function(method = "auto", conda = "auto") {
 }
 
 
-# global reference to scipy (will be initialized in .onLoad)
-synsets <- reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
-
+#' Synsets function from wordnet
+synsets <- function(){
+  reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
+}
 
 # .onLoad <- function(libname, pkgname) {
 #   # use superassignment to update global reference to scipy
@@ -51,6 +52,8 @@ synsets <- reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
 get_translation <-  function(token, part_of_speech, language = "jpn"){
   # get the first two lemmas of a given language
   # for every synset that contains the token and matches the part_of_speech
+  synsets <- synsets()
+
   if(!language %in% word.lists::nltk_languages$lang){
     stop(
     glue::glue("Language not available.
@@ -93,7 +96,7 @@ get_translation <-  function(token, part_of_speech, language = "jpn"){
 #' @export
 #'
 get_definition <- function(token, part_of_speech){
-
+  synsets <- synsets()
   if(length(synsets(token, pos = part_of_speech)) == 0) {
     NA_character_
   } else{
