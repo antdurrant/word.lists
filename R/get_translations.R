@@ -160,7 +160,7 @@ get_wordlist <- function(data, language, def = TRUE){
   )
 
   base <- data %>%
-    dplyr::select(doc_id, sentence_id, token_id, token, lemma, upos) %>%
+    dplyr::select(doc_id, sentence_id, token_id, token, lemma, upos, sentence) %>%
     dplyr::left_join(pos_trans)
 
   nope <- base %>%
