@@ -160,7 +160,7 @@ get_wordlist <- function(data, language, def = TRUE){
   )
 
   base <- data %>%
-    dplyr::select(doc_id, sentence_id, token_id, token, lemma, upos) %>%
+    dplyr::select(doc_id, sentence_id, token_id, token, lemma, upos, sentence) %>%
     dplyr::left_join(pos_trans)
 
   nope <- base %>%
@@ -181,7 +181,8 @@ get_wordlist <- function(data, language, def = TRUE){
     dplyr::bind_rows(nope) %>%
     dplyr::mutate(token_id = as.numeric(token_id)) %>%
     dplyr::arrange(doc_id, sentence_id, token_id) %>%
-    dplyr::filter(upos != "PUNCT")
+    dplyr::filter(upos != "PUNCT") %>%
+    dplyr::select(everything(), sentence)
 }
 
 
