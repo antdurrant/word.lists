@@ -99,7 +99,8 @@ list_dolch <- tibble(word = read_lines("./data-raw/list_new_dolch/NDL_1.0_lemmat
   mutate(headword = str_extract(word, "[a-z]+"),
          on_list = "dolch") %>%
   separate_rows(word) %>%
-  select(headword, word, on_list)
+  mutate(group = 1) %>%
+  select(group, headword, word, on_list)
 
 usethis::use_data(list_dolch, overwrite = TRUE)
 
