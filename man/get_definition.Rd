@@ -12,7 +12,7 @@ get_definition(token, part_of_speech)
 \item{part_of_speech}{one of "v" -verb, "a" - adjective, "n" - noun, or "r" - adverb}
 }
 \value{
-a character vector of length one, with definitions separated by ";\n"
+a character vector of length one, with definitions separated by ";\\n"
 }
 \description{
 This will match up to 3 meanings where the requested word and part of speech match.

@@ -22,8 +22,8 @@ install_nltk <- function(method = "auto", conda = "auto") {
 
 #' Download nltk data
 #'
-#' @param method
-#' @param conda
+#' @param method auto - dunno, refer to reticulate documentation
+#' @param conda auto - dunno, refer to reticulate documentation
 #'
 #' @export
 #'
@@ -32,12 +32,17 @@ get_nltk_data <- function(method = "auto", conda = "auto"){
 }
 
 #' Synsets function from wordnet
+#'
+#' @export
 synsets <- function(){
   reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
 }
 
+
+
+
 # .onLoad <- function(libname, pkgname) {
-#   # use superassignment to update global reference to scipy
+#   # use superassignment to update global reference to nltk
 #   synsets <<- reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
 # }
 
@@ -104,7 +109,7 @@ get_translation <-  function(token, part_of_speech, language = "jpn"){
 #' @param token an English word to pass to nltk's synset search
 #' @param part_of_speech one of "v" -verb, "a" - adjective, "n" - noun, or "r" - adverb
 #'
-#' @return a character vector of length one, with definitions separated by ";\n"
+#' @return a character vector of length one, with definitions separated by ";\\n"
 #' @export
 #'
 get_definition <- function(token, part_of_speech){
@@ -149,6 +154,7 @@ get_definition <- function(token, part_of_speech){
 #' @export
 #'
 get_wordlist <- function(data, language, def = TRUE){
+  doc_id <- lemma <- pos <- sentence <- sentence_id <- token <- token_id <- upos <- NULL
 
   pos_trans <- tibble::tribble(
     ~upos, ~pos,
@@ -182,7 +188,7 @@ get_wordlist <- function(data, language, def = TRUE){
     dplyr::mutate(token_id = as.numeric(token_id)) %>%
     dplyr::arrange(doc_id, sentence_id, token_id) %>%
     dplyr::filter(upos != "PUNCT") %>%
-    dplyr::select(everything(), sentence)
+    dplyr::select(tidyselect::everything(), sentence)
 }
 
 

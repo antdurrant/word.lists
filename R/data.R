@@ -58,11 +58,12 @@
 #' "for researchers" download from the source.
 #'
 #'
-#' @format A data frame with 3491 observations and 2 variables
+#' @format A data frame with 3491 observations and 3 variables
 #' \describe{
 #'   \item{headword}{base of the word family, English}
 #'   \item{word}{word for linking to the input text}
 #'   \item{on_list}{"dolch"}
+#'   \item{group}{empty, but necessarily extant for shiny app}
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/new-dolch-list}
 "list_dolch"
@@ -209,7 +210,7 @@
 #' Follow link to source for citation information and direct download of data
 #'
 #'
-#' @format A data frame with 4999 observations and 3 variables
+#' @format A data frame with 4999 observations and 7 variables
 #' \describe{
 #'   \item{wordnet}{name of the wordnet}
 #'   \item{lang}{three-character abreviation to be passed to `get_syns` and `make_wordlist`}
@@ -222,3 +223,33 @@
 #' }
 #' @source \url{http://compling.hss.ntu.edu.sg/omw/}
 "nltk_languages"
+
+
+#' IPA
+#'
+#' A dataset containing the Carnegie-Mellon Pronouncing Dictionary (CMUDict).
+#' CMUDict includes all variations of the word - followed by 's etc as well, as it was designed to
+#' train text-to-speech systems.
+#' A great deal of the words in this dictionary are proper nouns, but all have been converted to
+#' lower case as they are provided in upper-case only.
+#' CMUDict uses the [ARPABET](https://en.wikipedia.org/wiki/ARPABET) for its transcription, so
+#' conversions to a couple of flavours of IPA are provided through quick-and-dirty phoneme translation,
+#' not through batch-downloads from an API etc.
+#' New Oxford translations DO NOT include stress-markers, as the translation was made at the phoneme-level,
+#' where New Oxford adds stress at the syllable-level.
+#' Wisdom ja-en translations include stress-markers, but are going to include more secondary stresses than
+#' the real dictionary, as that is how CMUDict behaves.
+#' This uses the most recent CMUDict that I could find - 0.7b, released in 2014
+#'
+#' @format A data frame with 133854 observations and 4 variables
+#' \describe{
+#'   \item{token}{the word}
+#'   \item{carnegie_mellon}{the verbatim CMUDict}
+#'   \item{new_oxford_american}{autotranslated IPA in the style of the New Oxford American dictionary (built-in to macOS)}
+#'   \item{wisdom}{autotranslated IPA in the style of ウィズダム英和辞典}
+#'
+#' }
+#' @source \url{http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/}
+#' @source \url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict/}
+#'
+"cmu_ipa"

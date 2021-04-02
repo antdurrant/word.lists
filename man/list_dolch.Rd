@@ -5,11 +5,12 @@
 \alias{list_dolch}
 \title{New Dolch List}
 \format{
-A data frame with 3491 observations and 2 variables
+A data frame with 3491 observations and 3 variables
 \describe{
 \item{headword}{base of the word family, English}
 \item{word}{word for linking to the input text}
 \item{on_list}{"dolch"}
+\item{group}{empty, but necessarily extant for shiny app}
 }
 }
 \source{

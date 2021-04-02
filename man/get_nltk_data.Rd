@@ -7,7 +7,9 @@
 get_nltk_data(method = "auto", conda = "auto")
 }
 \arguments{
-\item{conda}{}
+\item{method}{auto - dunno, refer to reticulate documentation}
+
+\item{conda}{auto - dunno, refer to reticulate documentation}
 }
 \description{
 Download nltk data

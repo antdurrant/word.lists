@@ -5,7 +5,7 @@
 \alias{nltk_languages}
 \title{NLTK Wordnet Languages and Coverage}
 \format{
-A data frame with 4999 observations and 3 variables
+A data frame with 4999 observations and 7 variables
 \describe{
 \item{wordnet}{name of the wordnet}
 \item{lang}{three-character abreviation to be passed to \code{get_syns} and \code{make_wordlist}}

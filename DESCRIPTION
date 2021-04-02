@@ -33,4 +33,5 @@ Imports:
     stringr,
     reticulate,
     magrittr,
-    glue
+    glue,
+    tidyselect
