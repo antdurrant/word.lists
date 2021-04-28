@@ -202,6 +202,33 @@
 
 
 
+#' oxford 5000 cefr List
+#'
+#' A dataset containing the 5000 most frequent words for British and American English
+#' according to Oxford University Press.
+#' Words with multiple POS are given one row per POS.These often have different CEFR levels in this list.
+#' Where lemma and pos have two meanings with different CEFR levels,
+#' the lower is used.
+#' Groups are separated by CEFR level:
+#' A1 = 1 (1061 words),
+#' A2 = 2 (989 words),
+#' B1 = 3 (906 words),
+#' B2 = 4 (1569 words),
+#' C1 = 5 (1391 words).
+#'
+#' @format A data frame with 11283 observations and 3 variables
+#' \describe{
+#'   \item{lemma}{base form of the word, English}
+#'   \item{pos}{part of speech - not standardised to other formats (yet)}
+#'   \item{group}{"difficulty grouping"}
+#'   \item{on_list}{"oxford_am"|"oxford_br"}
+#' }
+#' @source \url{https://www.oxfordlearnersdictionaries.com/wordlists/oxford3000-5000}
+#' @source \url{https://www.oup.com.cn/test/oxford-3000-and-5000-position-paper.pdf}
+"list_oxford"
+
+
+
 #' NLTK Wordnet Languages and Coverage
 #'
 #' A dataset containing information on the wordnets

@@ -26,7 +26,7 @@ list_ngsl_all  <- list_ngsl_34k %>%
   select(-n) %>%
   right_join(list_ngsl_34k) %>%
   mutate(on_list = str_extract(wordlist, "[A-Za-z]+")) %>%
-  select(group, on_list, lemma, rank)
+  select(group, on_list, lemma, rank = row)
 
 usethis::use_data(list_ngsl_all, overwrite = TRUE)
 
