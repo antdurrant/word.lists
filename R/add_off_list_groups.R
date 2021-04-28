@@ -11,11 +11,13 @@
 #'
 add_off_list_groups <- function(data){
   data %>%
-    dplyr::mutate(group = dplyr::case_when(
-      is.na(group) & stringr::str_detect(lemma, "[0-9]") ~ "NUMBER",
-      is.na(group) & upos == "PROPN"                     ~ "PROPER-NOUN",
-      is.na(group) & upos == "PRON"                      ~ "PRONOUN",
-      is.na(group)                                       ~ "OFF-LIST",
-      TRUE                                               ~ as.character(group))
+    dplyr::mutate(
+      group = dplyr::case_when(
+        is.na(group) & stringr::str_detect(lemma, "[0-9]") ~ "NUMBER",
+        is.na(group) & upos == "PROPN"                     ~ "PROPER-NOUN",
+        is.na(group) & upos == "PRON"                      ~ "PRONOUN",
+        is.na(group)                                       ~ "OFF-LIST",
+        TRUE                                               ~ as.character(group)
+        )
     )
 }
