@@ -8,13 +8,13 @@
 A data frame with 11283 observations and 3 variables
 \describe{
 \item{lemma}{base form of the word, English}
-\itme{pos}{part of speech - not standardised to other formats (yet)}
+\item{pos}{part of speech - not standardised to other formats (yet)}
 \item{group}{"difficulty grouping"}
 \item{on_list}{"oxford_am"|"oxford_br"}
 }
 }
 \source{
-\url {https://www.oxfordlearnersdictionaries.com/wordlists/oxford3000-5000}
+\url{https://www.oxfordlearnersdictionaries.com/wordlists/oxford3000-5000}
 
 \url{https://www.oup.com.cn/test/oxford-3000-and-5000-position-paper.pdf}
 }
