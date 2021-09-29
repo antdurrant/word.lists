@@ -7,7 +7,7 @@
 add_off_list_groups(data)
 }
 \arguments{
-\item{data}{}
+\item{data}{a dataframe with at least "group", "upos", and "lemma" variables}
 }
 \value{
 a dataframe with a mutated group variable

@@ -12,7 +12,8 @@ replace_off_list <- function(data, groups){
   lemma<-
     upos<-
     token<-
-
+    token1 <-
+      NULL
 
 
  if(!"word_e" %in% colnames(groups)) groups <- groups %>% dplyr::rename(word_e = lemma)
@@ -24,7 +25,7 @@ off <- data %>%
   dplyr::mutate(token = stringr::str_to_lower(token)) %>%
   dplyr::mutate(token = stringr::str_replace(token, "breek", "bring")) %>%
   dplyr::anti_join(groups, by = c("token" = "word_e")) %>%
-  dplyr::mutate(token1= str_replace(token, "ie[r|s]$", "y"),
+  dplyr::mutate(token1 = stringr::str_replace(token, "ie[r|s]$", "y"),
          token1 = stringr::str_remove(token1, "s$")) %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
   dplyr::mutate(token1 = stringr::str_remove(token1, "r$")) %>%
@@ -33,7 +34,7 @@ off <- data %>%
          token1 = stringr::str_remove(token1, "es$"),
          token1 = stringr::str_remove(token1, "ing$")) %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
-  dplyr::mutate(token1 = str_replace(token, "ing$", "e")) %>%
+  dplyr::mutate(token1 = stringr::str_replace(token, "ing$", "e")) %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
   dplyr::mutate(token1 = stringr::str_remove(token, "d$")) %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
@@ -48,7 +49,7 @@ off <- data %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
   dplyr::mutate(token1 = stringr::str_remove_all(token, "[^A-Za-z]")) %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
-  dplyr::mutate(token1 = str_replace(token, "ably$", "able")) %>%
+  dplyr::mutate(token1 = stringr::str_replace(token, "ably$", "able")) %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
   dplyr::mutate(token1 = stringr::str_remove(lemma, "-")) %>%
   dplyr::anti_join(groups, by = c("token1" = "word_e")) %>%
@@ -80,7 +81,7 @@ off <- data %>%
 #' @param group_list dataframe of words/lemmas with vocab groups attatched
 #' @param off_list if true, `replace_off_list()` will be called on `data` and `group_list`
 #'
-#' @return
+#' @return a dataframe of analytics information on your text
 #' @export
 #'
 piped_text_analytics <- function(data, group_list, off_list = TRUE ) {
@@ -104,7 +105,8 @@ piped_text_analytics <- function(data, group_list, off_list = TRUE ) {
     fk<-
     cl<-
     ari<-
-
+    token1 <-
+    NULL
 
 
 

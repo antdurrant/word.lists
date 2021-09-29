@@ -12,7 +12,7 @@ doc_level_analytics(data, text_col = text)
 \item{text_col}{the column with the texts in}
 }
 \value{
-
+dataframe with added formality variable
 }
 \description{
 for things that can't be done with \code{udpipe()} output

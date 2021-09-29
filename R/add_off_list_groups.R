@@ -4,12 +4,13 @@
 #' This should be used after producing wordlists with `word.lists::get_wordlists`, `tidytext::unnest_tokens` etc. AND
 #' joining it to a word list with `lemma` and `group` variables
 #'
-#' @param data
+#' @param data a dataframe with at least "group", "upos", and "lemma" variables
 #'
 #' @return a dataframe with a mutated group variable
 #' @export
 #'
 add_off_list_groups <- function(data){
+
   data %>%
     dplyr::mutate(
       group = dplyr::case_when(

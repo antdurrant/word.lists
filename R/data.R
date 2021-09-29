@@ -62,6 +62,7 @@
 #' \describe{
 #'   \item{headword}{base of the word family, English}
 #'   \item{word}{word for linking to the input text}
+#'   \item{lemma}{lemma}
 #'   \item{on_list}{"dolch"}
 #'   \item{group}{empty, but necessarily extant for shiny app}
 #' }
@@ -218,6 +219,7 @@
 #'
 #' @format A data frame with 11283 observations and 3 variables
 #' \describe{
+#'   \item{cefr}{CEFR level}
 #'   \item{lemma}{base form of the word, English}
 #'   \item{pos}{part of speech - not standardised to other formats (yet)}
 #'   \item{group}{"difficulty grouping"}

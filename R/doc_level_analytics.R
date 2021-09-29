@@ -6,10 +6,12 @@
 #' @param data a dataframe with entire texts in one column
 #' @param text_col the column with the texts in
 #'
-#' @return
+#' @return dataframe with added formality variable
 #' @export
 #'
 doc_level_analytics <- function(data, text_col = text){
+
+  text <- NULL
 
   safe_formal <- purrr::possibly(qdap::formality, otherwise = list(formality = list(formality = NA_real_)))
   formality <-

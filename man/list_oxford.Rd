@@ -7,6 +7,7 @@
 \format{
 A data frame with 11283 observations and 3 variables
 \describe{
+\item{cefr}{CEFR level}
 \item{lemma}{base form of the word, English}
 \item{pos}{part of speech - not standardised to other formats (yet)}
 \item{group}{"difficulty grouping"}

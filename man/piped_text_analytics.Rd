@@ -14,7 +14,7 @@ piped_text_analytics(data, group_list, off_list = TRUE)
 \item{off_list}{if true, \code{replace_off_list()} will be called on \code{data} and \code{group_list}}
 }
 \value{
-
+a dataframe of analytics information on your text
 }
 \description{
 use udpipe's pos and dependency parsing to get some basic analytics on texts
