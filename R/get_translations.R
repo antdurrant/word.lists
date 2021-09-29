@@ -78,6 +78,10 @@ get_translation <-  function(token, part_of_speech, language = "jpn"){
     {stringr::str_flatten(word.lists::nltk_languages$lang, collapse = ' || ')}"))
   }
 
+  if(class(token) != "character"){
+    token <- as.character(token)
+  }
+
   if(length(synsets(token, pos = part_of_speech)) == 0) {
     NA_character_
   } else{
