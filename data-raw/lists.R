@@ -32,7 +32,7 @@ usethis::use_data(list_flemma, overwrite = TRUE)
 
 # academic spoken word list
 
-list_aswl_flemma  <-
+list_aswl  <-
 tibble(path = list.files("./data-raw/list_aswl", full.names = TRUE)) %>%
   mutate(sheet = map(path, excel_sheets)) %>%
   unnest(sheet) %>%
@@ -51,3 +51,5 @@ tibble(path = list.files("./data-raw/list_aswl", full.names = TRUE)) %>%
   ) %>%
   select(lemma, group = level) %>%
   mutate(on_list = "ASWL")
+
+usethis::use_data(list_aswl, overwrite = TRUE)

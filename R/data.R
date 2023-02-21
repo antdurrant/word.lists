@@ -249,6 +249,7 @@
 #' - Group 4: 141 headwords/175 flemmas
 #'
 #' @source \url{https://osf.io/gwk45/}
+"list_aswl"
 
 
 #' NLTK Wordnet Languages and Coverage
