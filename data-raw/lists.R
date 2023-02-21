@@ -29,3 +29,25 @@ list_flemma <- tibble(path = list.files("./data-raw/list_flemma_50c", full.names
 
 usethis::use_data(list_flemma, overwrite = TRUE)
 
+
+# academic spoken word list
+
+list_aswl_flemma  <-
+tibble(path = list.files("./data-raw/list_aswl", full.names = TRUE)) %>%
+  mutate(sheet = map(path, excel_sheets)) %>%
+  unnest(sheet) %>%
+  mutate(level = str_extract(sheet, "(?<=Level )\\d+") %>% parse_number()) %>%
+  filter(!is.na(level)) %>%
+  mutate(data = map2(path, sheet, ~read_xlsx(.x, .y))) %>%
+  unnest(data) %>%
+  select(-path, -sheet) %>%
+  janitor::clean_names() %>%
+  rename(token = level_6_word_family_headword) %>%
+  pivot_longer(
+    cols = -c(level, ranking_by_frequency, token),
+    values_drop_na = TRUE,
+    names_to = "name",
+    values_to = "lemma"
+  ) %>%
+  select(lemma, group = level) %>%
+  mutate(on_list = "ASWL")

@@ -2,11 +2,12 @@
 #'
 #' A dataset containing the New Academic Word List (NAWL) & New General Service List (NGSL).
 #' Difficulty groupings have been arbitrarily set by me, as follows:
-#' Group 1: first 500 words of NGSL by frequency & "supplementary" words  - months/numbers etc
-#' Group 2: next 500 words of NGSL by frequency
-#' Group 3: next 1000 words of NGSL by frequency
-#' Group 4: remaining NGSL words by frequency (about 800 words)
-#' Group 5: academic word list (about 950 words)
+#'
+#' - Group 1: first 500 words of NGSL by frequency & "supplementary" words  - months/numbers etc
+#' - Group 2: next 500 words of NGSL by frequency
+#' - Group 3: next 1000 words of NGSL by frequency
+#' - Group 4: remaining NGSL words by frequency (about 800 words)
+#' - Group 5: academic word list (about 950 words)
 #'
 #'
 #' @format A data frame with 3807 observations and 3 variables
@@ -126,7 +127,7 @@
 #' - Group 2: next 500 words of NGSL by frequency
 #' - Group 3: next 1000 words of NGSL by frequency
 #' - Group 4: remaining NGSL words by frequency (about 800 words) + NAWL (about 900 words)
-#' - Groups 5-13: frequency groupings by first significant digit of rank (9,000-9,999, 10,000-19,999, 20,000, 29,999 etc)
+#' - Groups 5-13: frequency groupings by first significant digit of rank (9,000-9,999, 10,000-19,999, 20,000-29,999 etc)
 #'
 #'
 #' @format A data frame with 31241 observations and 4 variables
@@ -143,7 +144,7 @@
 #' TOEIC List
 #'
 #' A dataset containing the NGSL & TOEIC Lists.
-#' #' For more information and rationale, see the source documentation.
+#' For more information and rationale, see the source documentation.
 #'
 #' Difficulty groupings have been arbitrarily set by me, as follows:
 #'
@@ -210,12 +211,14 @@
 #' Words with multiple POS are given one row per POS.These often have different CEFR levels in this list.
 #' Where lemma and pos have two meanings with different CEFR levels,
 #' the lower is used.
+#'
 #' Groups are separated by CEFR level:
-#' A1 = 1 (1061 words),
-#' A2 = 2 (989 words),
-#' B1 = 3 (906 words),
-#' B2 = 4 (1569 words),
-#' C1 = 5 (1391 words).
+#'
+#' - Group 1: A1 (1061 words)
+#' - Group 2: A2 (989 words)
+#' - Group 3: B1 (906 words)
+#' - Group 4: B2 (1569 words)
+#' - Group 5: C1 (1391 words)
 #'
 #' @format A data frame with 11283 observations and 3 variables
 #' \describe{
@@ -229,6 +232,23 @@
 #' @source \url{https://www.oup.com.cn/test/oxford-3000-and-5000-position-paper.pdf}
 "list_oxford"
 
+
+
+#' Academic Spoken Word List
+#'
+#' For more information and rationale, see the source documentation.
+#'
+#' A dataset containing 6914 flemmas based on headwords as listed in The Academic Spoken Word List by Dang, Coxhead & Webb.
+#'
+#'
+#' Groups are separated by level as in the paper:
+#'
+#' - Group 1: 825 headwords/3618 flemmas
+#' - Group 2: 450 headwords/1816 flemmas
+#' - Group 3: 380 headwords/1305 flemmas
+#' - Group 4: 141 headwords/175 flemmas
+#'
+#' @source \url{https://osf.io/gwk45/}
 
 
 #' NLTK Wordnet Languages and Coverage
