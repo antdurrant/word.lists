@@ -1,6 +1,6 @@
 Package: word.lists
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: A Collection Of Word Lists For ESL
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Anthony",
            family = "Durrant",
@@ -22,7 +22,7 @@ RoxygenNote: 7.1.2
 URL: https://github.com/antdurrant/word.lists
 BugReports: https://github.com/antdurrant/word.lists/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.6)
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
