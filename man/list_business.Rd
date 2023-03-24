@@ -14,6 +14,9 @@ A data frame with 4602 observations and 3 variables
 }
 \source{
 \url{https://www.newgeneralservicelist.org/bsl-business-service-list}
+
+#' @note LICENSE:
+Creative Commons Attribution-ShareAlike 4.0 International License.
 }
 \usage{
 list_business

@@ -28,11 +28,15 @@ according to Oxford University Press.
 Words with multiple POS are given one row per POS.These often have different CEFR levels in this list.
 Where lemma and pos have two meanings with different CEFR levels,
 the lower is used.
+}
+\details{
 Groups are separated by CEFR level:
-A1 = 1 (1061 words),
-A2 = 2 (989 words),
-B1 = 3 (906 words),
-B2 = 4 (1569 words),
-C1 = 5 (1391 words).
+\itemize{
+\item Group 1: A1 (1061 words)
+\item Group 2: A2 (989 words)
+\item Group 3: B1 (906 words)
+\item Group 4: B2 (1569 words)
+\item Group 5: C1 (1391 words)
+}
 }
 \keyword{datasets}

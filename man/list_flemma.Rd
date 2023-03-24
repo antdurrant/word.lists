@@ -25,4 +25,7 @@ taken from Tom Cobb's lextutor site.
 Groups are separated by the hundred, and this list is specifically targeted at
 graded readers.
 }
+\note{
+Accessed February 2021
+}
 \keyword{datasets}

@@ -31,4 +31,8 @@ Difficulty groupings have been arbitrarily set by me, as follows:
 \item Group 4: remaining NGSL words by frequency (about 800 words)
 }
 }
+\note{
+LICENSE:
+Creative Commons Attribution-ShareAlike 4.0 International License.
+}
 \keyword{datasets}

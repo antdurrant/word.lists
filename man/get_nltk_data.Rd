@@ -4,13 +4,17 @@
 \alias{get_nltk_data}
 \title{Download nltk data}
 \usage{
-get_nltk_data(method = "auto", conda = "auto")
+get_nltk_data(method = "auto", conda = "auto", gui = FALSE)
 }
 \arguments{
-\item{method}{auto - dunno, refer to reticulate documentation}
+\item{method}{auto - refer to reticulate documentation}
 
-\item{conda}{auto - dunno, refer to reticulate documentation}
+\item{conda}{auto - refer to reticulate documentation}
+
+\item{gui}{bool - optionally run the GUI downloader to select specific datasets.
+Note that running the GUI does \emph{not} install omw or wn datasets.}
 }
 \description{
-Download nltk data
+This by default downloads the open multilingual wordnet 1.4 (omw) & wordnet 2022 (wn)
+datasets from \code{nltk.download}. You can optionally use the gui downloader interface to select whatever you may want to use.
 }

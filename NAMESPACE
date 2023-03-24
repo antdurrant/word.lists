@@ -2,7 +2,6 @@
 
 export("%>%")
 export(add_off_list_groups)
-export(doc_level_analytics)
 export(get_definition)
 export(get_nltk_data)
 export(get_translation)

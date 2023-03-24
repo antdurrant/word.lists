@@ -18,6 +18,9 @@
 
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/nawl-new-academic-word-list/}
+#'
+#' @note LICENSE:
+#' Creative Commons Attribution-ShareAlike 4.0 International License.
 "list_academic"
 
 
@@ -42,6 +45,9 @@
 #'   \item{on_list}{"business"}
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/bsl-business-service-list}
+#'
+#' #' @note LICENSE:
+#' Creative Commons Attribution-ShareAlike 4.0 International License.
 "list_business"
 
 
@@ -68,6 +74,9 @@
 #'   \item{group}{empty, but necessarily extant for shiny app}
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/new-dolch-list}
+#'
+#' #' @note LICENSE:
+#' Creative Commons Attribution-ShareAlike 4.0 International License.
 "list_dolch"
 
 
@@ -92,6 +101,8 @@
 #'   \item{on_list}{general/academic/business/toeic}
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/bsl-business-service-list}
+#' @note LICENSE:
+#' Creative Commons Attribution-ShareAlike 4.0 International License.
 "list_general_plus"
 
 
@@ -114,6 +125,8 @@
 #'   \item{on_list}{"general"}
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/}
+#' @note LICENSE:
+#' Creative Commons Attribution-ShareAlike 4.0 International License.
 "list_ngsl"
 
 #' Full NGSL
@@ -138,6 +151,8 @@
 #'   \item{rank}{word frequency rank according to the researchers}
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/}
+#' @note LICENSE:
+#' Creative Commons Attribution-ShareAlike 4.0 International License.
 "list_ngsl_all"
 
 
@@ -162,6 +177,8 @@
 #'   \item{on_list}{general/academic/business/toeic}
 #' }
 #' @source \url{https://www.newgeneralservicelist.org/bsl-business-service-list}
+#' @note LICENSE:
+#' Creative Commons Attribution-ShareAlike 4.0 International License.
 "list_toeic"
 
 
@@ -183,6 +200,8 @@
 #'   \item{on_list}{"flemma"}
 #' }
 #' @source \url{https://www.lextutor.ca/vp/comp/bnc_info.html}
+#' @note Accessed February 2021
+#'
 "list_flemma"
 
 
@@ -190,8 +209,8 @@
 #'
 #' A dataset containing the 5000 most frequent words
 #' according to wikipedia in 2019
-#' Groups are separated by the thousand.
 #'
+#' Groups are separated by the thousand.
 #'
 #'
 #' @format A data frame with 4999 observations and 3 variables
@@ -240,7 +259,12 @@
 #'
 #' A dataset containing 6914 flemmas based on headwords as listed in The Academic Spoken Word List by Dang, Coxhead & Webb.
 #'
-#'
+#' @format A data frame with 6914 observations and 3 variables
+#' \describe{
+#'   \item{lemma}{base form of the word, English}
+#'   \item{group}{"difficulty grouping"}
+#'   \item{on_list}{"flemma"}
+#' }
 #' Groups are separated by level as in the paper:
 #'
 #' - Group 1: 825 headwords/3618 flemmas
@@ -249,7 +273,41 @@
 #' - Group 4: 141 headwords/175 flemmas
 #'
 #' @source \url{https://osf.io/gwk45/}
+#' @source \url{https://onlinelibrary.wiley.com/doi/10.1111/lang.12253}
 "list_aswl"
+
+
+
+#' Kelly Project English Word List
+#'
+#' For more information and rationale, see the source documentation.
+#'
+#' A dataset containing 7549 tokens, graded by CEFR difficulty. Note that while these may not be lemmas, they are noted as such to maintain consistency with other `list_` datasets.
+#'
+#' Groups are separated by level as in the paper:
+#'
+#' - Group 1: A1: 789 tokens
+#' - Group 2: A2: 1383 tokens
+#' - Group 3: B1: 948 tokens
+#' - Group 4: B2: 921 tokens
+#' - Group 5: C1: 1107 tokens
+#' - Group 6: C2: 2401 tokens
+#'
+#' @format A data frame with 7549 observations and 3 variables
+#' \describe{
+#'   \item{lemma}{base form of the word, English}
+#'   \item{group}{"difficulty grouping"}
+#'   \item{on_list}{"flemma"}
+#' }
+#'
+#' @source \url{http://corpus.leeds.ac.uk/serge/kelly/}
+#' @references \url{https://link.springer.com/article/10.1007/s10579-013-9251-2}
+#' @note LICENSE:
+#' Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic license
+#'
+"list_kelly"
+
+
 
 
 #' NLTK Wordnet Languages and Coverage
@@ -303,3 +361,5 @@
 #' @source \url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict/}
 #'
 "cmu_ipa"
+
+

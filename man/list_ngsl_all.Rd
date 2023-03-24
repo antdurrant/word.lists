@@ -30,7 +30,11 @@ Difficulty groupings have been arbitrarily set by me, as follows:
 \item Group 2: next 500 words of NGSL by frequency
 \item Group 3: next 1000 words of NGSL by frequency
 \item Group 4: remaining NGSL words by frequency (about 800 words) + NAWL (about 900 words)
-\item Groups 5-13: frequency groupings by first significant digit of rank (9,000-9,999, 10,000-19,999, 20,000, 29,999 etc)
+\item Groups 5-13: frequency groupings by first significant digit of rank (9,000-9,999, 10,000-19,999, 20,000-29,999 etc)
 }
+}
+\note{
+LICENSE:
+Creative Commons Attribution-ShareAlike 4.0 International License.
 }
 \keyword{datasets}
