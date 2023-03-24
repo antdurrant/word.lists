@@ -1,8 +1,9 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
-})
-
+library(reticulate)
 library(testthat)
+
+reticulate::use_condaenv("r-reticulate")
+# install_nltk()
+# get_nltk_data()
 test_that("`get_syns` returns a character vector of length 1",{
   expect_equal(
     object = get_translation(token = "missile", part_of_speech =  "n", language = "jpn" ),
