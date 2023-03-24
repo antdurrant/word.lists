@@ -18,6 +18,8 @@ list_wiki
 \description{
 A dataset containing the 5000 most frequent words
 according to wikipedia in 2019
+}
+\details{
 Groups are separated by the thousand.
 }
 \keyword{datasets}

@@ -21,10 +21,18 @@ list_academic
 \description{
 A dataset containing the New Academic Word List (NAWL) & New General Service List (NGSL).
 Difficulty groupings have been arbitrarily set by me, as follows:
-Group 1: first 500 words of NGSL by frequency & "supplementary" words  - months/numbers etc
-Group 2: next 500 words of NGSL by frequency
-Group 3: next 1000 words of NGSL by frequency
-Group 4: remaining NGSL words by frequency (about 800 words)
-Group 5: academic word list (about 950 words)
+}
+\details{
+\itemize{
+\item Group 1: first 500 words of NGSL by frequency & "supplementary" words  - months/numbers etc
+\item Group 2: next 500 words of NGSL by frequency
+\item Group 3: next 1000 words of NGSL by frequency
+\item Group 4: remaining NGSL words by frequency (about 800 words)
+\item Group 5: academic word list (about 950 words)
+}
+}
+\note{
+LICENSE:
+Creative Commons Attribution-ShareAlike 4.0 International License.
 }
 \keyword{datasets}

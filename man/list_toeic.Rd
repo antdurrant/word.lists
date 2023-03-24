@@ -20,7 +20,7 @@ list_toeic
 }
 \description{
 A dataset containing the NGSL & TOEIC Lists.
-#' For more information and rationale, see the source documentation.
+For more information and rationale, see the source documentation.
 }
 \details{
 Difficulty groupings have been arbitrarily set by me, as follows:
@@ -31,5 +31,9 @@ Difficulty groupings have been arbitrarily set by me, as follows:
 \item Group 4: remaining NGSL words by frequency (about 800 words)
 \item Group 5: TOEIC (about 1250 words)
 }
+}
+\note{
+LICENSE:
+Creative Commons Attribution-ShareAlike 4.0 International License.
 }
 \keyword{datasets}

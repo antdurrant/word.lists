@@ -16,6 +16,9 @@ A data frame with 3491 observations and 3 variables
 }
 \source{
 \url{https://www.newgeneralservicelist.org/new-dolch-list}
+
+#' @note LICENSE:
+Creative Commons Attribution-ShareAlike 4.0 International License.
 }
 \usage{
 list_dolch

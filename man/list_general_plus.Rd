@@ -32,4 +32,8 @@ Difficulty groupings have been arbitrarily set by me, as follows:
 \item Group 5: BSL, NAWL, TOEIC (about 2800 words)
 }
 }
+\note{
+LICENSE:
+Creative Commons Attribution-ShareAlike 4.0 International License.
+}
 \keyword{datasets}
