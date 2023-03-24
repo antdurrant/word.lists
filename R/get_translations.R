@@ -22,33 +22,32 @@ install_nltk <- function(method = "auto", conda = "auto") {
 
 #' Download nltk data
 #'
-#' @param method auto - dunno, refer to reticulate documentation
-#' @param conda auto - dunno, refer to reticulate documentation
+#' This by default downloads the open multilingual wordnet 1.4 (omw) & wordnet 2022 (wn)
+#' datasets from `nltk.download`. You can optionally use the gui downloader interface to select whatever you may want to use.
+#'
+#' @param method auto - refer to reticulate documentation
+#' @param conda auto - refer to reticulate documentation
+#' @param gui bool - optionally run the GUI downloader to select specific datasets.
+#' Note that running the GUI does _not_ install omw or wn datasets.
 #'
 #' @export
 #'
-get_nltk_data <- function(method = "auto", conda = "auto"){
-  reticulate::import("nltk")$download()
+get_nltk_data <- function(method = "auto", conda = "auto", gui = FALSE){
+
+  if(gui){
+    reticulate::import("nltk")$download()
+  } else{
+    reticulate::import("nltk")$download("omw-1.4")
+    reticulate::import("nltk")$download("wordnet2022")
+  }
 }
 
 #' Synsets function from wordnet
 #'
 #' @export
 synsets <- function(){
-  reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
+  reticulate::import("nltk", delay_load = TRUE)$wordnet$wn$synsets
 }
-
-
-
-
-# .onLoad <- function(libname, pkgname) {
-#   # use superassignment to update global reference to nltk
-#   synsets <<- reticulate::import("nltk", delay_load = TRUE)$wordnet$wordnet$synsets
-# }
-
-
-
-
 
 
 #' Get translations of individual words from nltk
