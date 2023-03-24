@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "antdurrant@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: A collection of word-frequency lists.
+Description: A collection of word-frequency lists and associated tools.
 Config/reticulate:
     list(
         packages = list(
@@ -34,5 +34,4 @@ Imports:
     reticulate,
     magrittr,
     glue,
-    tidyselect,
-    qdap
+    tidyselect
