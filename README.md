@@ -300,6 +300,4 @@ word.lists::nltk_languages %>%
 | Swedish (SALDO)                  | swe  |    6796 |   5824 |   6904 | 99%  | CC-BY 3.0    |
 | Thai Wordnet                     | tha  |   73350 |  82504 |  95517 | 81%  | wordnet      |
 
-TODO: Add IPA
-
 TODO: Bring this functionality to an app
